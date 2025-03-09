@@ -1,8 +1,6 @@
 package org.taylorivanoff.ironsights.core;
 
 import org.joml.Matrix4f;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_ESCAPE;
-import static org.lwjgl.glfw.GLFW.glfwSetWindowShouldClose;
 import org.taylorivanoff.ironsights.graphics.Camera;
 import org.taylorivanoff.ironsights.graphics.Model;
 import org.taylorivanoff.ironsights.graphics.Renderer;
@@ -11,7 +9,7 @@ public class Game {
     private Window window;
     private Renderer renderer;
     private Camera camera;
-    private Model cube;
+    private Model monkey;
 
     public void run() {
         init();
@@ -26,7 +24,7 @@ public class Game {
         Input.init(window.getWindowHandle());
 
         try {
-            cube = ResourceManager.getInstance().loadModel(
+            monkey = ResourceManager.getInstance().loadModel(
                     "assets/models/monkey.obj",
                     "assets/textures/cube.png");
         } catch (Exception ex) {
@@ -57,11 +55,6 @@ public class Game {
      */
     private void update() {
         camera.update();
-
-        // Update game state here
-        if (Input.isKeyDown(GLFW_KEY_ESCAPE)) {
-            glfwSetWindowShouldClose(window.getWindowHandle(), true);
-        }
     }
 
     /**
@@ -73,13 +66,12 @@ public class Game {
         renderer.clear();
 
         // Render game objects here
-        Matrix4f modelMatrix = new Matrix4f()
-                .translate(4, 0, 0); // Move cube 5 units away from camera
-        renderer.renderModel(cube, modelMatrix, camera);
+        Matrix4f modelMatrix = new Matrix4f().translate(4, 0, 0); // Move cube 5 units away from camera
+        renderer.renderModel(monkey, modelMatrix, camera);
     }
 
     private void cleanup() {
-        cube.cleanup();
+        monkey.cleanup();
         renderer.cleanup();
         window.cleanup();
     }
