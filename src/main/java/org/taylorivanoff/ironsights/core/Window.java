@@ -5,8 +5,10 @@ import java.nio.IntBuffer;
 import static org.lwjgl.glfw.GLFW.GLFW_CONTEXT_VERSION_MAJOR;
 import static org.lwjgl.glfw.GLFW.GLFW_CONTEXT_VERSION_MINOR;
 import static org.lwjgl.glfw.GLFW.GLFW_FALSE;
+import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_LEFT;
 import static org.lwjgl.glfw.GLFW.GLFW_OPENGL_CORE_PROFILE;
 import static org.lwjgl.glfw.GLFW.GLFW_OPENGL_PROFILE;
+import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
 import static org.lwjgl.glfw.GLFW.GLFW_RESIZABLE;
 import static org.lwjgl.glfw.GLFW.GLFW_TRUE;
 import static org.lwjgl.glfw.GLFW.GLFW_VISIBLE;
@@ -20,6 +22,8 @@ import static org.lwjgl.glfw.GLFW.glfwInit;
 import static org.lwjgl.glfw.GLFW.glfwMakeContextCurrent;
 import static org.lwjgl.glfw.GLFW.glfwPollEvents;
 import static org.lwjgl.glfw.GLFW.glfwSetFramebufferSizeCallback;
+import static org.lwjgl.glfw.GLFW.glfwSetMouseButtonCallback;
+import static org.lwjgl.glfw.GLFW.glfwSetWindowFocusCallback;
 import static org.lwjgl.glfw.GLFW.glfwSetWindowPos;
 import static org.lwjgl.glfw.GLFW.glfwShowWindow;
 import static org.lwjgl.glfw.GLFW.glfwSwapBuffers;
@@ -38,6 +42,7 @@ public class Window {
     private long windowHandle;
     private int width;
     private int height;
+    private boolean focused = false;
 
     public Window(int width, int height, String title) {
         this.width = width;
@@ -83,8 +88,7 @@ public class Window {
 
         // Set up OpenGL context
         glfwMakeContextCurrent(windowHandle);
-        glfwSwapInterval(1); // Enable vsync
-        glfwShowWindow(windowHandle);
+        glfwSwapInterval(0); // Enable vsync
 
         // Set callbacks
         glfwSetFramebufferSizeCallback(windowHandle, (window, w, h) -> {
@@ -92,6 +96,23 @@ public class Window {
             this.height = h;
             glViewport(0, 0, w, h);
         });
+
+        glfwSetMouseButtonCallback(windowHandle, (window, button, action, mods) -> {
+            if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+                if (!Input.isCursorLocked() && focused) {
+                    Input.setCursorLocked(true);
+                }
+            }
+        });
+
+        glfwSetWindowFocusCallback(windowHandle, (window, focused) -> {
+            this.focused = focused;
+            if (!focused) {
+                Input.setCursorLocked(false);
+            }
+        });
+
+        glfwShowWindow(windowHandle);
     }
 
     public boolean shouldClose() {
@@ -118,5 +139,9 @@ public class Window {
 
     public int getHeight() {
         return height;
+    }
+
+    public boolean isFocused() {
+        return focused;
     }
 }
