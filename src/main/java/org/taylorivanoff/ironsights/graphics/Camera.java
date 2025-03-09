@@ -99,7 +99,7 @@ public class Camera {
         isActivelyMoving = Input.isKeyDown(GLFW_KEY_W) ||
                 Input.isKeyDown(GLFW_KEY_S) ||
                 Input.isKeyDown(GLFW_KEY_A) ||
-                Input.isKeyDown(GLFW_KEY_D) || velocity.;
+                Input.isKeyDown(GLFW_KEY_D);
 
         // Update speed modifiers
         currentSpeed = baseSpeed;
