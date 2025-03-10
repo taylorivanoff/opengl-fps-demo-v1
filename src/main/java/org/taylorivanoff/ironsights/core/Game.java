@@ -1,15 +1,13 @@
 package org.taylorivanoff.ironsights.core;
 
-import org.joml.Matrix4f;
-import org.taylorivanoff.ironsights.graphics.Camera;
-import org.taylorivanoff.ironsights.graphics.Model;
-import org.taylorivanoff.ironsights.graphics.Renderer;
+import org.joml.*;
+import org.taylorivanoff.ironsights.graphics.*;
 
 public class Game {
     private Window window;
     private Renderer renderer;
     private Camera camera;
-    private Model monkey;
+    private Model scene;
 
     public void run() {
         init();
@@ -24,9 +22,9 @@ public class Game {
         Input.init(window.getWindowHandle());
 
         try {
-            monkey = ResourceManager.getInstance().loadModel(
-                    "assets/models/monkey.obj",
-                    "assets/textures/cube.png");
+            scene = ResourceManager.getInstance().loadModel(
+                    "assets/models/scene.obj",
+                    "assets/textures/cobble.jpeg");
         } catch (Exception ex) {
         }
     }
@@ -64,14 +62,12 @@ public class Game {
      */
     private void render() {
         renderer.clear();
-
-        // Render game objects here
-        Matrix4f modelMatrix = new Matrix4f().translate(4, 0, 0); // Move cube 5 units away from camera
-        renderer.renderModel(monkey, modelMatrix, camera);
+        Matrix4f modelMatrix = new Matrix4f().translate(4, -2f, 0);
+        renderer.renderModel(scene, modelMatrix, camera);
     }
 
     private void cleanup() {
-        monkey.cleanup();
+        scene.cleanup();
         renderer.cleanup();
         window.cleanup();
     }

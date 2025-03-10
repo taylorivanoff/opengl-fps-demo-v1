@@ -1,16 +1,10 @@
 package org.taylorivanoff.ironsights.graphics;
 
-import org.joml.Matrix4f;
-import org.joml.Vector3f;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_A;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_D;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT_CONTROL;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_LEFT_SHIFT;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_S;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_SPACE;
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_W;
-import org.taylorivanoff.ironsights.core.Input;
-import org.taylorivanoff.ironsights.core.Time;
+import java.lang.Math;
+
+import org.joml.*;
+import static org.lwjgl.glfw.GLFW.*;
+import org.taylorivanoff.ironsights.core.*;
 
 public class Camera {
     private Vector3f position = new Vector3f(0, 0, 0);
@@ -46,7 +40,7 @@ public class Camera {
 
     public Camera(int width, int height) {
         projectionMatrix.setPerspective(
-                (float) Math.toRadians(70.0f), // Field of view
+                (float) Math.toRadians(60.0f), // Field of view
                 (float) width / height, // Aspect ratio
                 0.1f, // Near plane
                 1000.0f // Far plane
