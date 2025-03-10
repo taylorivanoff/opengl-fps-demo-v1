@@ -1,4 +1,4 @@
-# OpenGL First Person Shooter Demo v1
+# OpenGL FPS Demo v1
 
 ## Overview
 This project is a 3D graphics application built using Java and the Lightweight Java Game Library (LWJGL). 
