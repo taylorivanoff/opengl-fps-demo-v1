@@ -1,7 +1,9 @@
-package org.taylorivanoff.ironsights.graphics;
+package com.example.graphics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.joml.Matrix4f;
-import java.util.*;
 
 public class Model {
     private List<Mesh> meshes = new ArrayList<>();

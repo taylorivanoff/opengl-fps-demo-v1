@@ -1,10 +1,11 @@
-package org.taylorivanoff.ironsights.graphics;
+package com.example.graphics;
 
-import java.lang.Math;
-
-import org.joml.*;
+import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import static org.lwjgl.glfw.GLFW.*;
-import org.taylorivanoff.ironsights.core.*;
+
+import com.example.core.Input;
+import com.example.core.Time;
 
 public class Camera {
     private Vector3f position = new Vector3f(0, 0, 0);

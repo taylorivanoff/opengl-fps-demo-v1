@@ -1,9 +1,10 @@
-package org.taylorivanoff.ironsights.core;
+package com.example.core;
 
 import org.joml.Matrix4f;
-import org.taylorivanoff.ironsights.graphics.Camera;
-import org.taylorivanoff.ironsights.graphics.Model;
-import org.taylorivanoff.ironsights.graphics.Renderer;
+
+import com.example.graphics.Camera;
+import com.example.graphics.Model;
+import com.example.graphics.Renderer;
 
 public class Game {
     private Window window;
@@ -18,7 +19,7 @@ public class Game {
     }
 
     private void init() {
-        window = new Window(1280, 720, "V1 FPS Demo");
+        window = new Window(1280, 720, "OpenGL FPS Demo v1");
         camera = new Camera(window.getWidth(), window.getHeight());
         renderer = new Renderer();
         Input.init(window.getWindowHandle());

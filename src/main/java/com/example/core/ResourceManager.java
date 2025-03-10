@@ -1,11 +1,11 @@
-package org.taylorivanoff.ironsights.core;
+package com.example.core;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.taylorivanoff.ironsights.graphics.Model;
-import org.taylorivanoff.ironsights.graphics.OBJLoader;
-import org.taylorivanoff.ironsights.graphics.Texture;
+import com.example.graphics.Model;
+import com.example.graphics.OBJLoader;
+import com.example.graphics.Texture;
 
 public class ResourceManager {
     private static ResourceManager instance;

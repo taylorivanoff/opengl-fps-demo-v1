@@ -1,4 +1,4 @@
-package org.taylorivanoff.ironsights.graphics;
+package com.example.graphics;
 
 import java.util.HashMap;
 import java.util.Map;

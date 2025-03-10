@@ -1,4 +1,4 @@
-package org.taylorivanoff.ironsights.core;
+package com.example.core;
 
 public class Time {
     private static double lastTime = 0;

@@ -6,9 +6,9 @@
   "configurations": [
     {
       "type": "java",
-      "name": "v1-fps-demo",
+      "name": "Game",
       "request": "launch",
-      "mainClass": "org.taylorivanoff.ironsights.core.Game",
+      "mainClass": "com.example.core.Game",
       "vmArgs": "-XstartOnFirstThread",
       "projectName": "v1-fps-demo"
     }
