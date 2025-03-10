@@ -1,7 +1,7 @@
-# V1 FPS Demo OpenGL 3D Java LWJGL
+# OpenGL First Person Shooter Demo v1
 
 ## Overview
-This project is a 3D graphics application built using Java and the Lightweight Java Game Library (LWJGL). It incorporates AI-driven mechanics and physics simulation using jBullet.
+This project is a 3D graphics application built using Java and the Lightweight Java Game Library (LWJGL). 
 
 ## Features
 - **OpenGL Rendering**: Real-time 3D rendering with modern OpenGL.
