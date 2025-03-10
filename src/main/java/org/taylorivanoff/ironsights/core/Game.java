@@ -1,7 +1,9 @@
 package org.taylorivanoff.ironsights.core;
 
-import org.joml.*;
-import org.taylorivanoff.ironsights.graphics.*;
+import org.joml.Matrix4f;
+import org.taylorivanoff.ironsights.graphics.Camera;
+import org.taylorivanoff.ironsights.graphics.Model;
+import org.taylorivanoff.ironsights.graphics.Renderer;
 
 public class Game {
     private Window window;
@@ -16,7 +18,7 @@ public class Game {
     }
 
     private void init() {
-        window = new Window(1280, 720, "Iron Sights");
+        window = new Window(1280, 720, "V1 FPS Demo");
         camera = new Camera(window.getWidth(), window.getHeight());
         renderer = new Renderer();
         Input.init(window.getWindowHandle());
@@ -29,11 +31,6 @@ public class Game {
         }
     }
 
-    /**
-     * ░█▀▀░█▀█░█▄█░█▀▀░░░█░░░█▀█░█▀█░█▀█
-     * ░█░█░█▀█░█░█░█▀▀░░░█░░░█░█░█░█░█▀▀
-     * ░▀▀▀░▀░▀░▀░▀░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀░░
-     */
     private void loop() {
         while (!window.shouldClose()) {
             Time.update();
@@ -46,20 +43,10 @@ public class Game {
         }
     }
 
-    /**
-     * ░█░█░█▀█░█▀▄░█▀█░▀█▀░█▀▀░░░█░░░█▀█░█▀█░█▀█
-     * ░█░█░█▀▀░█░█░█▀█░░█░░█▀▀░░░█░░░█░█░█░█░█▀▀
-     * ░▀▀▀░▀░░░▀▀░░▀░▀░░▀░░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀░░
-     */
     private void update() {
         camera.update();
     }
 
-    /**
-     * ░█▀▄░█▀▀░█▀█░█▀▄░█▀▀░█▀▄░░░█░░░█▀█░█▀█░█▀█
-     * ░█▀▄░█▀▀░█░█░█░█░█▀▀░█▀▄░░░█░░░█░█░█░█░█▀▀
-     * ░▀░▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░░
-     */
     private void render() {
         renderer.clear();
         Matrix4f modelMatrix = new Matrix4f().translate(4, -2f, 0);

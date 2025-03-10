@@ -6,11 +6,11 @@
   "configurations": [
     {
       "type": "java",
-      "name": "IronSights",
+      "name": "v1-fps-demo",
       "request": "launch",
       "mainClass": "org.taylorivanoff.ironsights.core.Game",
       "vmArgs": "-XstartOnFirstThread",
-      "projectName": "iron-sights"
+      "projectName": "v1-fps-demo"
     }
   ]
 }
