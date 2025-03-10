@@ -14,7 +14,7 @@ This project is a 3D graphics application built using Java and the Lightweight J
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/taylorivanoff/opengl-fps-demo-v1
    ```
 2. Install dependencies with Maven, include natives from your platform
 
