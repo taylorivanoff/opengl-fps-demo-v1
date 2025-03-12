@@ -1,26 +1,31 @@
-# OpenGL FPS Demo v1
+# OpenGL FPS Demo v1 
 
 ## Overview
-This project is a 3D graphics application built using Java and the Lightweight Java Game Library (LWJGL). 
+
+This is a basic first-person shooter (FPS) implemented in Java using LWJGL for OpenGL rendering and features basic FPS Movement in an OBJ scene.
 
 ## Features
-- **OpenGL Rendering**: Real-time 3D rendering with modern OpenGL.
-- **LWJGL**: Provides efficient bindings for OpenGL.
 
-## Prerequisites
-- Java 8 or later
-- LWJGL (Lightweight Java Game Library)
+- **Entity Component System (ECS)** for managing game entities efficiently
+- **Player Movement (WASD+Space)** with smooth mouse control
 
-## Installation
-1. Clone the repository:
+## Installation & Setup
+
+### Prerequisites
+
+- Java 17 or later
+- LWJGL 3
+- Maven for dependency management
+
+### Building & Running
+
+1. **Clone the repository:**
    ```sh
-   git clone https://github.com/taylorivanoff/opengl-fps-demo-v1
+   git clone https://github.com/taylorivanoff/opengl-fps-demo-v1.git
    ```
-2. Install dependencies with Maven, include natives from your platform
+2. **Install dependencies with maven **
 
-## Usage
-- Run the application to start rendering 3D objects.
+## Controls
 
-## Contact
-For any questions or contributions, feel free to reach out via the project's repository.
-
+- **WASD** - Move forward, backward, left, right
+- **Space** - Jump
