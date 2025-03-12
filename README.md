@@ -2,12 +2,7 @@
 
 ## Overview
 
-This is a basic first-person shooter (FPS) implemented in Java using LWJGL for OpenGL rendering and features basic FPS Movement in an OBJ scene.
-
-## Features
-
-- **Entity Component System (ECS)** for managing game entities efficiently
-- **Player Movement (WASD+Space)** with smooth mouse control
+This is a basic 3D game implemented in Java using LWJGL for OpenGL rendering. It features walking, jumping and mouse-based camera movement in in an OBJ scene.
 
 ## Installation & Setup
 
